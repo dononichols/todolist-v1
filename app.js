@@ -14,7 +14,15 @@ const app = express();
 //////////
 // create a simple get route, that sends the browser the word, "Hello", when a user trys to access the Home route "/."
 app.get("/", function(req, res){
-    res.send("Hello");
+    
+    var today = new Date();
+
+    if (today.getDay() === 6 || today.getDay() === 3) {
+        res.send("Yay it's the weekend!");
+    } else {
+        res.send("Boo! I have to work!");
+    }
+
 });
 
 
